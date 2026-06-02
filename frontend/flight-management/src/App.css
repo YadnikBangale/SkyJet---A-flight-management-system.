@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #111827
+    );
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* APP LAYOUT */
+
+.app-container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+    width:280px;
+
+    background:
+    rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(25px);
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
+
+    padding:35px 24px;
+
+    position:fixed;
+
+    height:100vh;
+
+    top:0;
+    left:0;
+}
+
+/* LOGO */
+
+.logo{
+
+    font-size:38px;
+
+    font-weight:800;
+
+    margin-bottom:60px;
+
+    letter-spacing:1px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #8b5cf6,
+        #06b6d4,
+        #3b82f6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* SIDEBAR LINKS */
+
+.sidebar-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    padding:18px 22px;
+
+    margin-bottom:18px;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:0.35s;
+}
+
+.sidebar-link:hover{
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(139,92,246,0.25),
+        rgba(6,182,212,0.2)
+    );
+
+    color:white;
+
+    transform:
+    translateX(8px);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+
+    flex:1;
+
+    margin-left:280px;
+
+    padding:50px;
+}
+
+/* GLASS CARD */
+
+.glass-card{
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,0.35);
+
+    animation:
+    fadeIn 0.7s ease;
+}
+
+/* HEADINGS */
+
+h1{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #94a3b8
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* INPUTS */
+
+.form-control{
+
+    width:100%;
+
+    background:
+    rgba(255,255,255,0.06);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    outline:none;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    color:white;
+
+    margin-bottom:22px;
+
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+.form-control:focus{
+
+    border:
+    1px solid #06b6d4;
+
+    box-shadow:
+    0 0 20px rgba(6,182,212,0.25);
+}
+
+.form-control::placeholder{
+    color:#94a3b8;
+}
+
+/* BUTTON */
+
+.primary-btn{
+
+    width:100%;
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #8b5cf6,
+        #06b6d4
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    box-shadow:
+    0 8px 25px rgba(6,182,212,0.2);
+}
+
+.primary-btn:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 12px 30px rgba(139,92,246,0.35);
+}
+
+/* FLIGHT GRID */
+
+.flight-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+    margin-top:30px;
+}
+
+/* FLIGHT CARD */
+
+.flight-card{
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:28px;
+
+    transition:0.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.flight-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:-50px;
+    right:-50px;
+
+    width:140px;
+    height:140px;
+
+    background:
+    radial-gradient(
+        rgba(139,92,246,0.35),
+        transparent
+    );
+}
+
+.flight-card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* CARD CONTENT */
+
+.flight-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    color:white;
+}
+
+.flight-route{
+
+    color:#cbd5e1;
+
+    font-size:16px;
+
+    margin-bottom:22px;
+}
+
+.price{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#06b6d4;
+}
+
+/* SMALL LABELS */
+
+.label{
+
+    font-size:13px;
+
+    color:#94a3b8;
+
+    margin-bottom:5px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        #8b5cf6,
+        #06b6d4
+    );
+
+    border-radius:20px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:100%;
+
+        height:auto;
+
+        position:relative;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-around;
+
+        padding:20px;
+    }
+
+    .logo{
+        display:none;
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:25px;
+    }
+
+    .sidebar-link{
+
+        margin-bottom:0;
+
+        padding:14px;
+    }
+    .delete-btn{
+
+      width:100%;
+  
+      border:none;
+  
+      padding:14px;
+  
+      border-radius:16px;
+  
+      background:
+      linear-gradient(
+          90deg,
+          #ef4444,
+          #f97316
+      );
+  
+      color:white;
+  
+      font-size:15px;
+  
+      font-weight:600;
+  
+      cursor:pointer;
+  
+      transition:0.3s;
+  }
+  
+  .delete-btn:hover{
+  
+      transform:
+      translateY(-2px);
+  
+      box-shadow:
+      0 10px 25px rgba(239,68,68,0.35);
+  }
+  .delete-btn{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff416c,
+        #ff4b2b
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:0.5px;
+
+    cursor:pointer;
+
+    transition:all 0.35s ease;
+
+    box-shadow:
+    0 8px 20px rgba(255,75,43,0.25);
+}
+
+.delete-btn:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.02);
+
+    box-shadow:
+    0 12px 28px rgba(255,75,43,0.45);
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4b2b,
+        #ff416c
+    );
+}
+
+.delete-btn:active{
+
+    transform:
+    scale(0.98);
+}
+}
